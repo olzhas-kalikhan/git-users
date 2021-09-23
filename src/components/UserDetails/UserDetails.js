@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Box, Avatar, Typography, Grid, Link, Icon } from "@mui/material";
+import { Box, Avatar, Typography, Grid, Link } from "@mui/material";
 import GithubIcon from "assets/icons/GitHubIcon.png";
 
 const UserDetails = () => {
@@ -17,7 +17,10 @@ const UserDetails = () => {
       .catch(() => {
         setErr(true);
       });
-  }, []);
+  }, [username]);
+  if (err) {
+    return <Typography color="error">Oops error occured... </Typography>;
+  }
   if (user) {
     const {
       name,
@@ -63,6 +66,8 @@ const UserDetails = () => {
         </Grid>
       </Grid>
     );
+  } else {
+    return <Typography color="error">Users Not Found </Typography>;
   }
 };
 export default UserDetails;

@@ -1,8 +1,8 @@
-import { Box, Avatar, Typography, ButtonBase, Link } from "@mui/material";
+import { Box, Avatar, Typography, ButtonBase } from "@mui/material";
 import { useHistory } from "react-router";
 
 const User = ({ user }) => {
-  const { login, avatar_url, html_url } = user;
+  const { login, avatar_url } = user;
   const history = useHistory();
   const handleButtonClick = () => {
     history.push(`/${login}`);

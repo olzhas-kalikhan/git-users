@@ -1,4 +1,4 @@
-import { Autocomplete, Grid, TextField, Box } from "@mui/material";
+import { Grid, TextField, Box, Typography } from "@mui/material";
 import User from "components/User";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -19,6 +19,9 @@ const UserList = () => {
       })
       .catch(() => setError(true));
   }, []);
+  if (err) {
+    return <Typography color="error">Oops error occured... </Typography>;
+  }
   return (
     <Box>
       <TextField

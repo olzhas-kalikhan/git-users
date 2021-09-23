@@ -1,8 +1,7 @@
 import React from "react";
-import User from "components/User";
 import UserList from "components/UserList/UserList";
 import { Container } from "@mui/material";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserDetails from "components/UserDetails";
 
 function App() {
